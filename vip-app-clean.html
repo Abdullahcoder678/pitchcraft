@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💎 PitchCraft ULTRA VIP - Premium AI Empire Builder</title>
+    <link rel="stylesheet" href="vip-app-style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">💎 PitchCraft ULTRA VIP</div>
+            <div class="nav-menu">
+                <button id="loginBtn" class="nav-btn" onclick="showLogin()">🔐 VIP Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>💎 PitchCraft ULTRA VIP</h1>
+            <p>Premium AI Empire Builder - Generate Luxury Pitches + Ultra Websites + Business Analytics</p>
+            <div class="hero-features">
+                <span>💎 Ultra AI Pitch Generator</span>
+                <span>🌟 Premium Website Builder</span>
+                <span>📊 Advanced Business Analytics</span>
+                <span>💰 Investor Ready + Funding</span>
+                <span>🏆 VIP Success Guarantee</span>
+                <span>⚡ Lightning Fast Generation</span>
+            </div>
+            <button class="cta-btn" onclick="showSignup()">🚀 Create VIP Account</button>
+        </div>
+    </section>
+
+    <div id="signupModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="hideSignup()">&times;</span>
+            <h2>💎 Create ULTRA VIP Account</h2>
+            <form id="signupForm">
+                <input type="text" id="fullName" placeholder="👤 Full Name" required>
+                <input type="email" id="signupEmail" placeholder="📧 Email Address" required>
+                <input type="password" id="signupPassword" placeholder="🔒 Create Password" required>
+                <input type="password" id="confirmPassword" placeholder="🔒 Confirm Password" required>
+                <select id="planType" required>
+                    <option value="">Select VIP Plan</option>
+                    <option value="basic">💎 Basic VIP - $29/month</option>
+                    <option value="premium">👑 Premium VIP - $99/month</option>
+                    <option value="ultra">🌟 ULTRA VIP - $199/month</option>
+                </select>
+                <button type="submit" id="signupSubmit">Create ULTRA VIP Account</button>
+                <p style="text-align: center; color: #6b7280;">Already have account? <span id="showLogin" onclick="showLogin()">Login here</span></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="hideLogin()">&times;</span>
+            <h2>💎 VIP Login</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="📧 Email Address" required>
+                <input type="password" id="loginPassword" placeholder="🔒 Password" required>
+                <button type="submit" id="loginSubmit">Login to VIP Account</button>
+                <p style="text-align: center; color: #6b7280;">Don't have account? <span id="showSignupFromLogin" onclick="showSignup()">Create VIP Account</span></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="app" class="app-container hidden">
+        <div class="app-sidebar">
+            <div class="sidebar-menu">
+                <button class="menu-item active" data-tab="pitch">
+                    <i class="fas fa-gem"></i> ULTRA Pitch Generator
+                </button>
+                <button class="menu-item" data-tab="website">
+                    <i class="fas fa-crown"></i> Premium Website Builder
+                </button>
+                <button class="menu-item" data-tab="history">
+                    <i class="fas fa-trophy"></i> VIP Project History
+                </button>
+            </div>
+        </div>
+
+        <div class="app-main">
+            <div id="pitch-tab" class="tab-content active">
+                <div class="tab-header">
+                    <h2>💎 ULTRA VIP AI Pitch Generator</h2>
+                    <div class="stats">
+                        <span>💎 <span id="pitchCount">0</span> Ultra Pitches</span>
+                        <span>🌟 <span id="websiteCount">0</span> Premium Websites</span>
+                        <span>👑 ULTRA VIP Member</span>
+                    </div>
+                </div>
+
+                <div class="pitch-form">
+                    <div class="examples">
+                        <p>💡 ULTRA VIP Examples:</p>
+                        <div class="example-tags">
+                            <span onclick="fillExample('Revolutionary AI-powered fintech platform with blockchain integration for micro-investments and crypto trading')">💰 FinTech Empire</span>
+                            <span onclick="fillExample('Next-gen sustainable fashion marketplace with AR try-on, AI styling, and global supply chain')">👗 Fashion Revolution</span>
+                            <span onclick="fillExample('Enterprise B2B SaaS platform for predictive maintenance using IoT sensors and machine learning')">🏭 Industrial AI</span>
+                            <span onclick="fillExample('Advanced mental health platform with AI therapist, VR therapy, and personalized treatment plans')">🧠 HealthTech Innovation</span>
+                        </div>
+                    </div>
+
+                    <form id="pitchForm">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label><i class="fas fa-gem"></i> Your Revolutionary Startup Empire Idea</label>
+                                <textarea id="idea" placeholder="Describe your game-changing, world-dominating startup idea..." required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label><i class="fas fa-industry"></i> Industry Sector</label>
+                                <select id="industry">
+                                    <option value="">Select Industry</option>
+                                    <option value="AI/ML">🤖 AI/Machine Learning</option>
+                                    <option value="FinTech">💰 FinTech/Blockchain</option>
+                                    <option value="HealthTech">🏥 HealthTech/MedTech</option>
+                                    <option value="EdTech">📚 EdTech/Learning</option>
+                                    <option value="E-commerce">🛒 E-commerce/Retail</option>
+                                    <option value="SaaS">☁️ SaaS/Enterprise</option>
+                                    <option value="Other">🌟 Other/Innovation</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label><i class="fas fa-users"></i> Target Market</label>
+                                <input type="text" id="target" placeholder="B2B Enterprise, B2C Global, Fortune 500...">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="generate-btn">
+                            <span id="btnText"><i class="fas fa-gem"></i> Generate ULTRA VIP Pitch</span>
+                            <span id="loader" class="hidden"><i class="fas fa-spinner fa-spin"></i> Creating Empire...</span>
+                        </button>
+                    </form>
+                </div>
+
+                <div id="pitchResult" class="result-container hidden">
+                    <div class="result-header">
+                        <h3>🎉 Your ULTRA VIP Pitch is Ready</h3>
+                        <div class="result-actions">
+                            <button onclick="generateWebsite()" class="action-btn website-btn">
+                                <i class="fas fa-crown"></i> Generate Premium Website
+                            </button>
+                            <button onclick="copyPitch()" class="action-btn">
+                                <i class="fas fa-copy"></i> Copy VIP Pitch
+                            </button>
+                            <button onclick="downloadPitch()" class="action-btn">
+                                <i class="fas fa-download"></i> Download Premium
+                            </button>
+                        </div>
+                    </div>
+                    <div id="pitchContent"></div>
+                </div>
+            </div>
+
+            <div id="website-tab" class="tab-content">
+                <div class="tab-header">
+                    <h2>👑 ULTRA Premium Website Builder</h2>
+                    <p>Chat with AI to build luxury websites instantly</p>
+                </div>
+                
+                <div class="ai-chat-container">
+                    <div class="chat-section">
+                        <div class="chat-header-mini">
+                            <h4>💬 Chat with ULTRA AI</h4>
+                            <div class="api-status" id="apiStatus">🟢 VIP API Ready</div>
+                        </div>
+                        
+                        <div class="quick-examples">
+                            <span class="quick-btn" onclick="sendQuickMessage('Ultra luxury restaurant website banao with premium menu, chef profiles, reservation system, and fine dining experience')">🍽️ Luxury Restaurant</span>
+                            <span class="quick-btn" onclick="sendQuickMessage('Premium e-commerce store banao high-end fashion ke liye with AR try-on, personal styling, and VIP shopping experience')">👗 Premium Fashion Store</span>
+                            <span class="quick-btn" onclick="sendQuickMessage('Professional portfolio website banao celebrity photographer ke liye with stunning galleries, client testimonials, and booking system')">📸 Celebrity Portfolio</span>
+                            <span class="quick-btn" onclick="sendQuickMessage('Luxury travel blog website banao with destination guides, premium hotels, and exclusive travel experiences')">✈️ Luxury Travel</span>
+                            <span class="quick-btn" onclick="sendQuickMessage('Corporate landing page banao Fortune 500 company ke liye with executive profiles, investor relations, and premium branding')">🏢 Fortune 500 Corporate</span>
+                        </div>
+
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="message ai-msg">
+                                <strong>ULTRA AI Assistant:</strong> Welcome to ULTRA VIP! Main aapke liye premium luxury websites bana sakta hun with advanced features, stunning design, and professional quality. Bas bolo kya chahiye! 💎🚀
+                            </div>
+                        </div>
+
+                        <div class="chat-input-area">
+                            <input type="text" id="chatInput" placeholder="💎 Describe your premium website requirements..." onkeypress="handleChatEnter(event)">
+                            <button class="chat-send-btn" id="chatSendBtn" onclick="sendChatMessage()">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="preview-section">
+                        <div class="preview-header">
+                            <h4>🌟 ULTRA VIP Website Preview</h4>
+                            <div class="preview-actions">
+                                <button class="fullscreen-btn" onclick="openFullscreen()">
+                                    <i class="fas fa-expand"></i> Fullscreen
+                                </button>
+                                <button class="download-btn" onclick="downloadGeneratedWebsite()">
+                                    <i class="fas fa-download"></i> Download Premium
+                                </button>
+                            </div>
+                        </div>
+                        <iframe class="website-preview-frame" id="websitePreviewFrame" src="about:blank"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div id="history-tab" class="tab-content">
+                <div class="tab-header">
+                    <h2>🏆 ULTRA VIP Project History</h2>
+                    <p>Your premium creations and success stories</p>
+                </div>
+                <div id="historyList" class="history-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="vip-app-script.js"></script>
+</body>
+</html>
